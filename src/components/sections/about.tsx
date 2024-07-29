@@ -1,20 +1,18 @@
 import logo from "../../assets/img/nobglogo.png";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { File } from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion as m } from "framer-motion";
 
 export default function About() {
+  const github = "https://github.com/fumitsukai";
   return (
     <>
-      <div className="text-center mt-10">
+      <div className="text-center mt-20" id="about">
         <h1 className="font-bold text-2xl mb-2">ALEXANDRU PANDELEA</h1>
-        <h2 className="text-persianRed dark:text-verdigris mb-4 md:mb-20">
-          WEB DEVELOPER
-        </h2>
+        <h2 className=" mb-4 md:mb-20 ">WEB DEVELOPER</h2>
       </div>
-      <section
-        className="flex flex-col md:grid md:grid-cols-3 justify-between  md:container md:mb-20 md:gap-10"
-        id="about"
-      >
+      <section className="flex flex-col md:grid md:grid-cols-3 justify-between  md:container md:gap-10">
         <img
           src={logo}
           alt="logo"
@@ -48,17 +46,33 @@ export default function About() {
           </p>
           <p className="mb-3">
             I am always on the look for interesting projects to be apart of so
-            feel free to <span>contact me</span>.
+            feel free to{" "}
+            <span className="text-persianRed dark:hover:text-verdigris ">
+              contact me
+            </span>
+            .
           </p>
           <div className="md:flex hidden justify-around mt-20 pb-12">
-            <button className="flex flex-col items-center font-light text-sm mb-3">
-              <FaGithub size={40} />
-              Github
-            </button>
-            <button className="flex flex-col items-center mb-3 font-light text-sm">
+            <Link to={github}>
+              <m.button
+                className="flex flex-col items-center font-light text-sm mb-3  hover:text-persianRed dark:hover:text-verdigris"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                whileTap={{ scale: 0.5 }}
+              >
+                <FaGithub size={40} />
+                Github
+              </m.button>
+            </Link>
+            <m.button
+              className="flex flex-col items-center mb-3 font-light text-sm  hover:text-persianRed dark:hover:text-verdigris"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              whileTap={{ scale: 0.5 }}
+            >
               <File size={40} />
               Resume
-            </button>
+            </m.button>
           </div>
         </div>
       </section>

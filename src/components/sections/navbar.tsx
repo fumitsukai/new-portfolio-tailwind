@@ -2,9 +2,9 @@ import { Menu } from "lucide-react";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { useMediaQuery } from "../hooks/use-media-query";
 import { ModeToggle } from "../mode-toggle";
-import { FaGithub, FaHome, FaUser, FaEnvelope } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { File } from "lucide-react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -13,10 +13,25 @@ export default function Navbar() {
       <div className="mx-10 flex items-center">
         <ModeToggle />
       </div>
-      <div className="flex justify-end gap-10 me-10">
-        <button className="hover:text-persianRed">ABOUT</button>
-        <button className="hover:text-persianRed">WORK</button>
-        <button className="hover:text-persianRed">CONTACT</button>
+      <div className="flex justify-end gap-10 me-10 mt-2 ">
+        <NavLink
+          to="#about"
+          className="hover:text-persianRed  hover:scale-110 transition duration-300 ease-out"
+        >
+          ABOUT
+        </NavLink>
+        <NavLink
+          to="#work"
+          className="hover:text-persianRed  hover:scale-110 transition duration-300 ease-out"
+        >
+          WORK
+        </NavLink>
+        <NavLink
+          to="#about"
+          className="hover:text-persianRed  hover:scale-110 transition duration-300 ease-out"
+        >
+          CONTACT
+        </NavLink>
       </div>
     </div>
   ) : (

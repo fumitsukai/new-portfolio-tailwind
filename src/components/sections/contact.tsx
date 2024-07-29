@@ -8,15 +8,9 @@ export default function Contact() {
         </h3>
         <p className="text-xs mb-2">pandeleaalexandru321@gmail.com</p>
         <div className="text-xs mb-20">
-          <button className="text-persianRed dark:text-verdigris me-1">
-            Linkedin
-          </button>
-          <button className="text-persianRed dark:text-verdigris me-1">
-            Facebook
-          </button>
-          <button className="text-persianRed dark:text-verdigris">
-            Instagram{" "}
-          </button>
+          <button className="text-persianRed  me-1">Linkedin</button>
+          <button className="text-persianRed  me-1">Facebook</button>
+          <button className="text-persianRed ">Instagram </button>
         </div>
       </section>
     </>
